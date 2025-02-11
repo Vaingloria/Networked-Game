@@ -15,6 +15,8 @@ public class SimpleGrabSystem : MonoBehaviour
 
     // Reference to the currently held item.
     private PickableItem pickedItem;
+    public PlayerMovement movement;
+
 
     /// <summary>
     /// Method called very frame.
@@ -29,6 +31,9 @@ public class SimpleGrabSystem : MonoBehaviour
             {
                 // If yes, drop picked item
                 DropItem(pickedItem);
+                pickedItem = null;
+                // allow player to jump
+                movement.setHolding(false);
             }
             else
             {
@@ -37,7 +42,7 @@ public class SimpleGrabSystem : MonoBehaviour
                 var ray = characterCamera.ViewportPointToRay(Vector3.one * 0.5f);
                 RaycastHit hit;
                 // Shot ray to find object to pick
-                if (Physics.Raycast(ray, out hit, 7.5f))
+                if (Physics.Raycast(ray, out hit, 8.5f))
                 {
                     // Check if object is pickable
                     var pickable = hit.transform.GetComponent<PickableItem>();
@@ -47,6 +52,8 @@ public class SimpleGrabSystem : MonoBehaviour
                     {
                         // Pick it
                         PickItem(pickable);
+                        // disable jumping
+                        movement.setHolding(true);
                     }
                 }
             }

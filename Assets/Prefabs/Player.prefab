@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 904048870240120550}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.86, y: -0.13, z: -2.12}
+  m_LocalPosition: {x: -4.86, y: 0, z: -2.84}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -251,7 +251,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  speed: 2
+  speed: 7
+  force: 300
+  maxSpeed: 25
+  rotationSpeed: 90
   colors:
   - {r: 1, g: 0.22934644, b: 0, a: 0}
   - {r: 0.006934643, g: 0, b: 1, a: 0}
@@ -356,6 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterCamera: {fileID: 7380404035551770494}
   slot: {fileID: 4254257765863817279}
+  movement: {fileID: 4516802323383189390}
 --- !u!1 &6529504671069218515
 GameObject:
   m_ObjectHideFlags: 0

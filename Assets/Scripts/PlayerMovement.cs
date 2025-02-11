@@ -8,11 +8,16 @@ using Unity.Netcode;
 // extension of MonoBehaviour that has functions related to multiplayer
 public class PlayerMovement : NetworkBehaviour
 {
-    public float speed = 2f;
-    public float force = 700f;
+    // movement vars
+    public float speed = 10f;
+    public float force = 250f;
+    public float maxSpeed = 20f;
     public float rotationSpeed = 90;
+    private bool holdingItem;
+    
     // create a list of colors
     public List<Color> colors = new List<Color>();
+
 
     // getting the reference to the prefab
     [SerializeField]
@@ -22,6 +27,8 @@ public class PlayerMovement : NetworkBehaviour
 
     public GameObject cannon;
     public GameObject bullet;
+
+    float groundCheck;
 
     Rigidbody rb;
     Transform t;
@@ -37,6 +44,9 @@ public class PlayerMovement : NetworkBehaviour
     {
         rb = GetComponent<Rigidbody>();
         t = GetComponent<Transform>();
+
+        groundCheck = GetComponent<Collider>().bounds.extents.y;
+        holdingItem = false;
     }
     // Update is called once per frame
     void Update()
@@ -46,29 +56,28 @@ public class PlayerMovement : NetworkBehaviour
         // not on the other prefabs 
         if (!IsOwner) return;
 
-        Vector3 moveDirection = new Vector3(0, 0, 0);
 
         if (Input.GetKey(KeyCode.W))
-        {
-            moveDirection.z = +1f;
-        }
-        if (Input.GetKey(KeyCode.S))
-        {
-            moveDirection.z = -1f;
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            moveDirection.x = -1f;
-        }
+            t.position += this.transform.forward * speed * Time.deltaTime;
+        else if (Input.GetKey(KeyCode.S))
+            t.position -= this.transform.forward * speed * Time.deltaTime;
+
+
+        // Quaternion returns a rotation that rotates x degrees around the x axis and so on
         if (Input.GetKey(KeyCode.D))
-        {
-            moveDirection.x = +1f;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
+            t.rotation *= Quaternion.Euler(0, rotationSpeed * Time.deltaTime, 0);
+        else if (Input.GetKey(KeyCode.A))
+            t.rotation *= Quaternion.Euler(0, -rotationSpeed * Time.deltaTime, 0);
+        else
+            rb.angularVelocity = new Vector3(0,0,0);
+
+
+        // check to make sure player is grounded and not holding item before they can jump
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded() && !(holdingItem) )
         {
             rb.AddForce(t.up * force);
         }
-        transform.position += moveDirection * speed * Time.deltaTime;
+        // transform.position += moveDirection * speed * Time.deltaTime;
 
 
         // if I is pressed spawn the object 
@@ -97,6 +106,16 @@ public class PlayerMovement : NetworkBehaviour
             BulletSpawningServerRpc(cannon.transform.position, cannon.transform.rotation);
         }
         */
+    }
+
+    private bool isGrounded()
+    {
+        return Physics.Raycast(t.position, -Vector3.up, groundCheck + 0.1f);
+    }
+
+    public void setHolding(bool state)
+    {
+        holdingItem = state;
     }
 
     // this method is called when the object is spawned
