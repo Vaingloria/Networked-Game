@@ -22,6 +22,10 @@ public class NetworkManagerUI : MonoBehaviour
     // join code
     public string joinCode;
 
+    // Afeef: I am attempting to work the team assignment logic in this
+    public string[] teams = new string[2]{"Red", "Blue"}; 
+    public string my_team;
+
     [SerializeField] private TMP_InputField joinCodeInputField;
     // after all objectes are created and initialized
     // Awake() method is called and executed
@@ -35,6 +39,9 @@ public class NetworkManagerUI : MonoBehaviour
             // call the NetworkManager's StartHost() method
             // NetworkManager.Singleton.StartHost();
             StartHostRelay();
+
+            // Afeef: I am attempting to randomly assign the teams upon clicking
+            //my_team = teams[random.Next(teams.Length)];
         });
 
         // add a listener to the client button
@@ -43,6 +50,9 @@ public class NetworkManagerUI : MonoBehaviour
             // call the NetworkManager's StartClient() method
             // NetworkManager.Singleton.StartClient();
             StartClientRelay(joinCodeInputField.text);
+
+            // Afeef: I am attempting to randomly assign the teams upon clicking
+            //my_team = teams[random.Next(teams.Length)];
         });
     }
 
@@ -53,6 +63,7 @@ public class NetworkManagerUI : MonoBehaviour
 
         //sign in anonymously
         await AuthenticationService.Instance.SignInAnonymouslyAsync();
+
     }
 
     // Start host relay
