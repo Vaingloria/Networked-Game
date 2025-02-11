@@ -252,9 +252,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   speed: 7
-  force: 300
+  force: 700
   maxSpeed: 25
-  rotationSpeed: 90
+  rotationSpeed: 120
   colors:
   - {r: 1, g: 0.22934644, b: 0, a: 0}
   - {r: 0.006934643, g: 0, b: 1, a: 0}
