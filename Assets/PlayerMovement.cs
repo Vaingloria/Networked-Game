@@ -9,6 +9,8 @@ using Unity.Netcode;
 public class PlayerMovement : NetworkBehaviour
 {
     public float speed = 2f;
+    public float force = 700f;
+    public float rotationSpeed = 90;
     // create a list of colors
     public List<Color> colors = new List<Color>();
 
@@ -21,6 +23,9 @@ public class PlayerMovement : NetworkBehaviour
     public GameObject cannon;
     public GameObject bullet;
 
+    Rigidbody rb;
+    Transform t;
+
     // reference to the camera audio listener
     [SerializeField] private AudioListener audioListener;
     // reference to the camera
@@ -30,7 +35,8 @@ public class PlayerMovement : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        rb = GetComponent<Rigidbody>();
+        t = GetComponent<Transform>();
     }
     // Update is called once per frame
     void Update()
@@ -57,6 +63,10 @@ public class PlayerMovement : NetworkBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             moveDirection.x = +1f;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(t.up * force);
         }
         transform.position += moveDirection * speed * Time.deltaTime;
 
