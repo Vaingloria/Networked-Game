@@ -38,6 +38,8 @@ public class PlayerMovement : NetworkBehaviour
     // reference to the camera
     [SerializeField] private Camera playerCamera;
 
+ 
+
 
     // Start is called before the first frame update
     void Start()
@@ -47,6 +49,7 @@ public class PlayerMovement : NetworkBehaviour
 
         groundCheck = GetComponent<Collider>().bounds.extents.y;
         holdingItem = false;
+
     }
     // Update is called once per frame
     void Update()
@@ -56,8 +59,10 @@ public class PlayerMovement : NetworkBehaviour
         // not on the other prefabs 
         if (!IsOwner) return;
 
+        
 
-        if (Input.GetKey(KeyCode.W))
+
+            if (Input.GetKey(KeyCode.W))
             t.position += this.transform.forward * speed * Time.deltaTime;
         else if (Input.GetKey(KeyCode.S))
             t.position -= this.transform.forward * speed * Time.deltaTime;
@@ -122,14 +127,22 @@ public class PlayerMovement : NetworkBehaviour
     // we will change the color of the objects
     public override void OnNetworkSpawn()
     {
+
         GetComponent<MeshRenderer>().material.color = colors[(int)OwnerClientId];
 
         // check if the player is the owner of the object
-        if (!IsOwner) return;
-        // if the player is the owner of the object
-        // enable the camera and the audio listener
-        audioListener.enabled = true;
-        playerCamera.enabled = true;
+        if (IsOwner)
+        {
+            // if the player is the owner of the object
+            // enable the camera and the audio listener
+            audioListener.enabled = true;
+            playerCamera.enabled = true;
+        }
+        else
+        {
+            audioListener.enabled = false;
+            playerCamera.enabled = false;
+        }
     }
 
     // need to add the [ServerRPC] attribute

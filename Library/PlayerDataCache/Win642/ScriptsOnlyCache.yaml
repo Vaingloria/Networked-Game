@@ -2,8 +2,11 @@ ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
     - NetworkManagerUI
+    - PickableItem
     - PlayerMovement
-    - Readme
+    - Score
+    - SimpleGrabSystem
+    - SpawnPackets
     - Target
     Unity.InputSystem.dll:
     - UnityEngine.InputSystem.InputActionAsset
@@ -350,155 +353,163 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 876}
     - Class: 114
-      Script: {instanceID: 17546}
+      Script: {instanceID: 1812}
     - Class: 114
-      Script: {instanceID: 17754}
+      Script: {instanceID: 17556}
     - Class: 114
-      Script: {instanceID: 17892}
+      Script: {instanceID: 17764}
     - Class: 114
-      Script: {instanceID: 18078}
+      Script: {instanceID: 18086}
     - Class: 114
-      Script: {instanceID: 18126}
+      Script: {instanceID: 18134}
     - Class: 114
-      Script: {instanceID: 18368}
+      Script: {instanceID: 18376}
     - Class: 114
-      Script: {instanceID: 18550}
+      Script: {instanceID: 18558}
     - Class: 114
-      Script: {instanceID: 18630}
+      Script: {instanceID: 18638}
     - Class: 114
-      Script: {instanceID: 18710}
+      Script: {instanceID: 18718}
     - Class: 114
-      Script: {instanceID: 18856}
+      Script: {instanceID: 18864}
     - Class: 114
-      Script: {instanceID: 18884}
+      Script: {instanceID: 18892}
     - Class: 114
-      Script: {instanceID: 18960}
+      Script: {instanceID: 18968}
     - Class: 114
-      Script: {instanceID: 19128}
+      Script: {instanceID: 19136}
     - Class: 114
-      Script: {instanceID: 19444}
+      Script: {instanceID: 19452}
     - Class: 114
-      Script: {instanceID: 19718}
+      Script: {instanceID: 19726}
     - Class: 114
-      Script: {instanceID: 20134}
+      Script: {instanceID: 20142}
     - Class: 114
-      Script: {instanceID: 20208}
+      Script: {instanceID: 20216}
     - Class: 114
-      Script: {instanceID: 20274}
+      Script: {instanceID: 20282}
     - Class: 114
-      Script: {instanceID: 20404}
+      Script: {instanceID: 20350}
     - Class: 114
-      Script: {instanceID: 20604}
+      Script: {instanceID: 20414}
     - Class: 114
-      Script: {instanceID: 20680}
+      Script: {instanceID: 20614}
     - Class: 114
-      Script: {instanceID: 20798}
+      Script: {instanceID: 20690}
     - Class: 114
-      Script: {instanceID: 20850}
+      Script: {instanceID: 20808}
     - Class: 114
-      Script: {instanceID: 20918}
+      Script: {instanceID: 20860}
     - Class: 114
-      Script: {instanceID: 20960}
+      Script: {instanceID: 20928}
     - Class: 114
-      Script: {instanceID: 21004}
+      Script: {instanceID: 20970}
     - Class: 114
-      Script: {instanceID: 22082}
+      Script: {instanceID: 21014}
     - Class: 114
-      Script: {instanceID: 22470}
+      Script: {instanceID: 22092}
     - Class: 114
-      Script: {instanceID: 22484}
+      Script: {instanceID: 22480}
     - Class: 114
-      Script: {instanceID: 22916}
+      Script: {instanceID: 22494}
     - Class: 114
-      Script: {instanceID: 23310}
+      Script: {instanceID: 22576}
     - Class: 114
-      Script: {instanceID: 23378}
+      Script: {instanceID: 22928}
     - Class: 114
-      Script: {instanceID: 23430}
+      Script: {instanceID: 23322}
     - Class: 114
-      Script: {instanceID: 23766}
+      Script: {instanceID: 23390}
     - Class: 114
-      Script: {instanceID: 23872}
+      Script: {instanceID: 23442}
     - Class: 114
-      Script: {instanceID: 23916}
+      Script: {instanceID: 23778}
     - Class: 114
-      Script: {instanceID: 23954}
+      Script: {instanceID: 23884}
     - Class: 114
-      Script: {instanceID: 24050}
+      Script: {instanceID: 23928}
     - Class: 114
-      Script: {instanceID: 24148}
+      Script: {instanceID: 23966}
     - Class: 114
-      Script: {instanceID: 24282}
+      Script: {instanceID: 24062}
     - Class: 114
-      Script: {instanceID: 25030}
+      Script: {instanceID: 24160}
     - Class: 114
-      Script: {instanceID: 25248}
+      Script: {instanceID: 24294}
     - Class: 114
-      Script: {instanceID: 25372}
+      Script: {instanceID: 25042}
     - Class: 114
-      Script: {instanceID: 25374}
+      Script: {instanceID: 25260}
     - Class: 114
-      Script: {instanceID: 25686}
+      Script: {instanceID: 25384}
     - Class: 114
-      Script: {instanceID: 25800}
+      Script: {instanceID: 25386}
     - Class: 114
-      Script: {instanceID: 26630}
+      Script: {instanceID: 25698}
     - Class: 114
-      Script: {instanceID: 26674}
+      Script: {instanceID: 25812}
     - Class: 114
-      Script: {instanceID: 27168}
+      Script: {instanceID: 26364}
     - Class: 114
-      Script: {instanceID: 27338}
+      Script: {instanceID: 26644}
     - Class: 114
-      Script: {instanceID: 27362}
+      Script: {instanceID: 26688}
     - Class: 114
-      Script: {instanceID: 28546}
+      Script: {instanceID: 27182}
     - Class: 114
-      Script: {instanceID: 28628}
+      Script: {instanceID: 27352}
     - Class: 114
-      Script: {instanceID: 29122}
+      Script: {instanceID: 27376}
     - Class: 114
-      Script: {instanceID: 29126}
+      Script: {instanceID: 28560}
     - Class: 114
-      Script: {instanceID: 29200}
+      Script: {instanceID: 28642}
     - Class: 114
-      Script: {instanceID: 29212}
+      Script: {instanceID: 29136}
     - Class: 114
-      Script: {instanceID: 29536}
+      Script: {instanceID: 29140}
     - Class: 114
-      Script: {instanceID: 29638}
+      Script: {instanceID: 29214}
     - Class: 114
-      Script: {instanceID: 29766}
+      Script: {instanceID: 29226}
     - Class: 114
-      Script: {instanceID: 30278}
+      Script: {instanceID: 29550}
     - Class: 114
-      Script: {instanceID: 30398}
+      Script: {instanceID: 29652}
     - Class: 114
-      Script: {instanceID: 30404}
+      Script: {instanceID: 29780}
     - Class: 114
-      Script: {instanceID: 30452}
+      Script: {instanceID: 30292}
     - Class: 114
-      Script: {instanceID: 30544}
+      Script: {instanceID: 30412}
     - Class: 114
-      Script: {instanceID: 30710}
+      Script: {instanceID: 30418}
     - Class: 114
-      Script: {instanceID: 30768}
+      Script: {instanceID: 30466}
     - Class: 114
-      Script: {instanceID: 30824}
+      Script: {instanceID: 30558}
     - Class: 114
-      Script: {instanceID: 30864}
+      Script: {instanceID: 30724}
     - Class: 114
-      Script: {instanceID: 31048}
+      Script: {instanceID: 30782}
     - Class: 114
-      Script: {instanceID: 31092}
+      Script: {instanceID: 30838}
     - Class: 114
-      Script: {instanceID: 31348}
+      Script: {instanceID: 30878}
     - Class: 114
-      Script: {instanceID: 31458}
+      Script: {instanceID: 31062}
     - Class: 114
-      Script: {instanceID: 31758}
+      Script: {instanceID: 31106}
     - Class: 114
-      Script: {instanceID: 31964}
+      Script: {instanceID: 31362}
+    - Class: 114
+      Script: {instanceID: 31472}
+    - Class: 114
+      Script: {instanceID: 31772}
+    - Class: 114
+      Script: {instanceID: 31978}
+    - Class: 114
+      Script: {instanceID: 32302}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -526,6 +537,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Universal.Runtime
     namespaceName: UnityEngine.Rendering.Universal
     className: UniversalRenderPipelineAsset
+  - hash:
+      serializedVersion: 2
+      Hash: ca5455ff5a1e79026fc1eff708a7f84b
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerMovement
   - hash:
       serializedVersion: 2
       Hash: 95c8a8c68e664d4868755f06e7c55997
@@ -598,12 +615,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem
     namespaceName: UnityEngine.InputSystem.Editor
     className: InputDebuggerWindow
-  - hash:
-      serializedVersion: 2
-      Hash: 761c7b95f73183068ab9499350730391
-    assemblyName: Assembly-CSharp
-    namespaceName: 
-    className: PlayerMovement
   - hash:
       serializedVersion: 2
       Hash: 9ebc0a3016506a0cbb7e0306dfcb9497
@@ -954,6 +965,12 @@ ScriptsOnlyBuild:
     className: NetworkObjectSpawner
   - hash:
       serializedVersion: 2
+      Hash: 8adae5986c9de06fc3efe3671e763b21
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PickableItem
+  - hash:
+      serializedVersion: 2
       Hash: c0a2b4d13675f08bfb211e044c334e68
     assemblyName: Unity.RenderPipelines.Core.Runtime
     namespaceName: UnityEngine.Rendering.UI
@@ -1240,6 +1257,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.InputSystem
     namespaceName: UnityEngine.InputSystem.UI
     className: MultiplayerEventSystem
+  - hash:
+      serializedVersion: 2
+      Hash: 6d6cfbec7d9e21325705eb5c68b75417
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SpawnPackets
   - hash:
       serializedVersion: 2
       Hash: dfb6913502ec81bb8fa5c3492539ab21
@@ -1594,6 +1617,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.VisualScripting.Core
     namespaceName: Unity.VisualScripting
     className: UnityOnBeginDragMessageListener
+  - hash:
+      serializedVersion: 2
+      Hash: d0037e980612dc43849e1cb6674a8190
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: Score
   - hash:
       serializedVersion: 2
       Hash: 27c1acc8ffcdf63369952d4c1f06ba85
@@ -2070,7 +2099,7 @@ ScriptsOnlyBuild:
     className: TMP_ColorGradient
   - hash:
       serializedVersion: 2
-      Hash: 971cadf7abe95ec0fb69e6823daa6777
+      Hash: e6baeb6cf983c78aac7d7de9ae2c2a65
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: NetworkManagerUI
@@ -2256,6 +2285,12 @@ ScriptsOnlyBuild:
     className: ToggleGroup
   - hash:
       serializedVersion: 2
+      Hash: 64b95a629d66c9fe2bd2f4ee4b0b0531
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: SimpleGrabSystem
+  - hash:
+      serializedVersion: 2
       Hash: b3eb5d73cd07eeee371bb1b136d026d6
     assemblyName: Unity.RenderPipelines.Universal.Runtime
     namespaceName: 
@@ -2293,4 +2328,4 @@ ScriptsOnlyBuild:
   platform: 19
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/17732/Network Tutorial/Output/Network Tutorial.exe
+  playerPath: C:/Users/frohg/Documents/temp/Network Tutorial.exe

@@ -1,8 +1,11 @@
 <linker>
 	<assembly fullname="Assembly-CSharp">
 		<type fullname="NetworkManagerUI" preserve="nothing"/>
+		<type fullname="PickableItem" preserve="nothing"/>
 		<type fullname="PlayerMovement" preserve="nothing"/>
-		<type fullname="Readme" preserve="nothing"/>
+		<type fullname="Score" preserve="nothing"/>
+		<type fullname="SimpleGrabSystem" preserve="nothing"/>
+		<type fullname="SpawnPackets" preserve="nothing"/>
 		<type fullname="Target" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.InputSystem">
