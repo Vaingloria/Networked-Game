@@ -114,7 +114,7 @@ GameObject:
   - component: {fileID: 7139279927864113871}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -251,10 +251,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  speed: 7
-  force: 700
+  speed: 11
+  force: 650
   maxSpeed: 25
-  rotationSpeed: 120
+  rotationSpeed: 150
+  holdingItem: 0
+  myItem: {fileID: 0}
+  team: 0
+  slot: {fileID: 4254257765863817279}
   colors:
   - {r: 1, g: 0.22934644, b: 0, a: 0}
   - {r: 0.006934643, g: 0, b: 1, a: 0}
@@ -263,6 +267,7 @@ MonoBehaviour:
   spawnedPrefab: {fileID: 6762315209048767788, guid: 3716442ca57ffe24da2e6fec96fd2319, type: 3}
   cannon: {fileID: 2657911692787121875}
   bullet: {fileID: 7056344034568552994, guid: fcb8f18b65a6328498a516459ca2647a, type: 3}
+  ScoreManager: {fileID: 5074148730529418957, guid: fb415693354ded94c96410f1ab15d94f, type: 3}
   audioListener: {fileID: 4785760175035403018}
   playerCamera: {fileID: 7380404035551770494}
 --- !u!114 &4992135130107594256
@@ -357,6 +362,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7708aa9bd4e97ba4bb328507cc106382, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
   characterCamera: {fileID: 7380404035551770494}
   slot: {fileID: 4254257765863817279}
   movement: {fileID: 4516802323383189390}

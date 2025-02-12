@@ -13,8 +13,15 @@ public class PlayerMovement : NetworkBehaviour
     public float force = 250f;
     public float maxSpeed = 20f;
     public float rotationSpeed = 90;
-    private bool holdingItem;
-    
+    public bool holdingItem;
+    public PickableItem myItem = null;
+
+    public int team;
+    // team 1: red
+    // team 2: blue
+
+    [SerializeField]
+    private Transform slot;
     // create a list of colors
     public List<Color> colors = new List<Color>();
 
@@ -27,6 +34,7 @@ public class PlayerMovement : NetworkBehaviour
 
     public GameObject cannon;
     public GameObject bullet;
+    public Score ScoreManager;
 
     float groundCheck;
 
@@ -103,6 +111,7 @@ public class PlayerMovement : NetworkBehaviour
             Destroy(instantiatedPrefab);
         }
 
+
         /*
         if (Input.GetButtonDown("Fire1"))
         {
@@ -118,9 +127,13 @@ public class PlayerMovement : NetworkBehaviour
         return Physics.Raycast(t.position, -Vector3.up, groundCheck + 0.1f);
     }
 
-    public void setHolding(bool state)
+    public void setHolding(bool state, PickableItem i)
     {
         holdingItem = state;
+        myItem = i;
+
+        myItem.slot = slot;
+        myItem.player = this;
     }
 
     // this method is called when the object is spawned
@@ -129,12 +142,15 @@ public class PlayerMovement : NetworkBehaviour
     {
 
         GetComponent<MeshRenderer>().material.color = colors[(int)OwnerClientId];
-
+        team = ((int)OwnerClientId % 2) + 1;
+        Debug.Log("team: " + team);
+        ScoreManager.setTeam(team);
         // check if the player is the owner of the object
         if (IsOwner)
         {
             // if the player is the owner of the object
             // enable the camera and the audio listener
+            
             audioListener.enabled = true;
             playerCamera.enabled = true;
         }

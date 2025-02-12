@@ -472,6 +472,8 @@
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.33f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"C:/Program Files/Unity/Hub/Editor/6000.0.33f1/Editor/Data/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 -analyzer:"Library/PackageCache/com.unity.transport/Analyzers/Unity.Transport.Analyzers.dll"
+"Assets/Scripts/ClientNetworkTransform.cs"
+"Assets/Scripts/Goal.cs"
 "Assets/Scripts/NetworkManagerUI.cs"
 "Assets/Scripts/PickableItem.cs"
 "Assets/Scripts/PlayerMovement.cs"

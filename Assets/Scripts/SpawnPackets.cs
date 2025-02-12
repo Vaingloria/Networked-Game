@@ -1,6 +1,7 @@
 using UnityEngine;
+using Unity.Netcode;
 
-public class SpawnPackets : MonoBehaviour
+public class SpawnPackets : NetworkBehaviour
 {
 
     private float spawnTime;
@@ -21,7 +22,25 @@ public class SpawnPackets : MonoBehaviour
         {
             timeSinceLastSpawn = Time.time;
             spawnTime = Random.Range(30f, 60f);
-            GameObject newPacket = GameObject.Instantiate(packet, gameObject.transform.position, gameObject.transform.rotation) as GameObject;
+            PacketSpawningServerRpc(gameObject.transform.position, gameObject.transform.rotation);
         }
+    }
+
+
+
+    // need to add the [ServerRPC] attribute
+    [ServerRpc]
+    // method name must end with ServerRPC
+    private void PacketSpawningServerRpc(Vector3 position, Quaternion rotation)
+    {
+        // call the BulletSpawningClientRpc method to locally create the bullet on all clients
+        PacketSpawningClientRpc(position, rotation);
+    }
+
+    [ClientRpc]
+    private void PacketSpawningClientRpc(Vector3 position, Quaternion rotation)
+    {
+        GameObject newPacket = Instantiate(packet, position, rotation);
+        newPacket.GetComponent<NetworkObject>().Spawn(true);
     }
 }

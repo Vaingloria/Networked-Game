@@ -1,5 +1,6 @@
 <linker>
 	<assembly fullname="Assembly-CSharp">
+		<type fullname="Goal" preserve="nothing"/>
 		<type fullname="NetworkManagerUI" preserve="nothing"/>
 		<type fullname="PickableItem" preserve="nothing"/>
 		<type fullname="PlayerMovement" preserve="nothing"/>
@@ -20,6 +21,7 @@
 		<type fullname="Unity.Multiplayer.Samples.Utilities.ClientAuthority.ClientNetworkTransform" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.Multiplayer.Tools.Common">
+		<type fullname="Unity.Multiplayer.Tools.Common.RuntimeUpdaterBehaviour" preserve="nothing"/>
 		<type fullname="Unity.Multiplayer.Tools.Common.Visualization.CustomColorSettings" preserve="nothing"/>
 	</assembly>
 	<assembly fullname="Unity.Netcode.Runtime">

@@ -1,9 +1,9 @@
 using UnityEngine;
-
+using Unity.Netcode;
 /// <summary>
 /// Simple example of Grabbing system.
 /// </summary>
-public class SimpleGrabSystem : MonoBehaviour
+public class SimpleGrabSystem : NetworkBehaviour
 {
     // Reference to the character camera.
     [SerializeField]
@@ -26,6 +26,8 @@ public class SimpleGrabSystem : MonoBehaviour
         // Execute logic only on button pressed
         if (Input.GetButtonDown("Fire1"))
         {
+
+            if (!IsOwner) return;
             // Check if player picked some item already
             if (pickedItem)
             {
@@ -33,7 +35,7 @@ public class SimpleGrabSystem : MonoBehaviour
                 DropItem(pickedItem);
                 pickedItem = null;
                 // allow player to jump
-                movement.setHolding(false);
+                movement.setHolding(false, null);
             }
             else
             {
@@ -53,7 +55,7 @@ public class SimpleGrabSystem : MonoBehaviour
                         // Pick it
                         PickItem(pickable);
                         // disable jumping
-                        movement.setHolding(true);
+                        movement.setHolding(true, pickable);
                     }
                 }
             }
@@ -74,14 +76,25 @@ public class SimpleGrabSystem : MonoBehaviour
         item.Rb.linearVelocity = Vector3.zero;
         item.Rb.angularVelocity = Vector3.zero;
 
+        if (item.slot != null)
+        {
+            // item being held by someone else, remove from their slot
+            item.player.holdingItem = false;
+            item.player.myItem = null;
+            item.slot = null;
+        }
         // Set Slot as a parent
-        item.transform.SetParent(slot);
+        item.setSlot(slot);
+        item.setPickedServerRPC(slot.position);
+        
 
         // Reset position and rotation
         item.transform.localPosition = Vector3.zero;
         item.transform.localEulerAngles = Vector3.zero;
 
     }
+
+
 
     /// <summary>
     /// Method for dropping item.
@@ -93,7 +106,8 @@ public class SimpleGrabSystem : MonoBehaviour
         pickedItem = null;
 
         // Remove parent
-        item.transform.SetParent(null);
+        item.setSlot(null);
+        item.setPickedServerRPC(new Vector3(-1,-1,-1));
 
         // Enable rigidbody
         item.Rb.isKinematic = false;

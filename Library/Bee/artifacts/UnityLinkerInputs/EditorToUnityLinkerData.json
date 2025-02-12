@@ -41,6 +41,13 @@
             "usedInScenes": []
         },
         {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "Goal",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
             "managedAssemblyName": "",
             "nativeClass": "LevelGameManager",
             "fullManagedTypeName": "",
@@ -211,6 +218,13 @@
             "managedAssemblyName": "Unity.Multiplayer.Samples.Utilities.ClientAuthority.dll",
             "nativeClass": "",
             "fullManagedTypeName": "Unity.Multiplayer.Samples.Utilities.ClientAuthority.ClientNetworkTransform",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Unity.Multiplayer.Tools.Common.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "Unity.Multiplayer.Tools.Common.RuntimeUpdaterBehaviour",
             "moduleName": "",
             "usedInScenes": []
         },

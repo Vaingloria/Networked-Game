@@ -40,19 +40,13 @@ public class NetworkManagerUI : MonoBehaviour
             // NetworkManager.Singleton.StartHost();
             StartHostRelay();
 
-            // Afeef: I am attempting to randomly assign the teams upon clicking
-            //my_team = teams[random.Next(teams.Length)];
         });
 
         // add a listener to the client button
         client_btn.onClick.AddListener(() =>
         {
-            // call the NetworkManager's StartClient() method
-            // NetworkManager.Singleton.StartClient();
             StartClientRelay(joinCodeInputField.text);
 
-            // Afeef: I am attempting to randomly assign the teams upon clicking
-            //my_team = teams[random.Next(teams.Length)];
         });
     }
 
